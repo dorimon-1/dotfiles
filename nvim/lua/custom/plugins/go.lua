@@ -7,7 +7,7 @@ return {
   },
   config = function()
     require('go').setup {
-      goimport = 'gopls', -- if set to 'gopls' will use golsp format
+      goimports = 'gopls', -- if set to 'gopls' will use golsp format
       gofmt = 'gopls', -- if set to gopls will use golsp format
       luasnip = true,
     }
