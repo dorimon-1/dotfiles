@@ -50,8 +50,8 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-#start firefox
-bindsym $mod+b exec firefox
+#start google-chrome
+bindsym $mod+b exec google-chrome
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -196,12 +196,12 @@ bar {
 bindsym $mod+Shift+x exec $HOME/.bin/scripts/lock.sh
 
 # Auto Start
-exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal -- bash -c "tmux new -s main && cd ~/dev/ && exec nvim"'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal -- zsh -c "tmux new -s main && cd ~/dev/ && exec nvim"'
+exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
 exec --no-startup-id i3-msg 'workspace 3; exec spotify'
 
 #Set keyboard repeat rate
-exec --no-startup-id xset r rate 300 50
+exec_always --no-startup-id xset r rate 300 50
 # Set keyboard layout
 #exec_always --no-startup-id setxkbmap -layout us,il -option grp:alt_shift_toggle
 
