@@ -1,29 +1,49 @@
-vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
-
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
-  opts = {
-    filesystem = {
-      filtered_items = {
-        --visible = true,
-        hide_dotfiles = false,
-        hide_gitignored = true,
-        hide_by_name = {
-          '.github',
-          '.gitignore',
-          'package-lock.json',
-        },
-        never_show = { '.git' },
-      },
-    },
-  },
+  branch = 'v3.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
   },
   config = function()
-    require('neo-tree').setup {}
+    require('neo-tree').setup {
+      close_if_last_window = true,
+      enable_diagnostics = true,
+      default_component_configs = {
+        icon = {
+          folder_closed = ' ',
+          folder_open = ' ',
+          folder_empty = '󱧵 ',
+          default = '',
+        },
+        git_status = {
+          symbols = {
+            -- Change type
+            added = ' ',
+            modified = ' ',
+            deleted = ' ',
+            renamed = '  ',
+            -- Status type
+            untracked = '',
+            ignored = ' ',
+            unstaged = '',
+            staged = ' ',
+            conflict = ' ',
+          },
+        },
+      },
+      window = {
+        position = 'float',
+      },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_by_name = {
+            '.git',
+          },
+        },
+      },
+    }
   end,
 }

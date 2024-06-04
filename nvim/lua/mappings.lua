@@ -19,7 +19,7 @@ M.filetree = {
 
 M.harpoon = {
   n = {
-    ['<leader>hh'] = { ':Telescope harpoon marks<CR>', 'Browse harpooned files' },
+    ['<leader>hh'] = { ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Harpoon file' },
     ['<leader>ha'] = { ':lua require("harpoon.mark").add_file()<CR>', 'Harpoon file' },
     ['<leader>hn'] = { ':lua require("harpoon.ui").nav_next()<CR>', 'Navigate to next harpooned file' },
     ['<leader>hb'] = { ':lua require("harpoon.ui").nav_prev()<CR>', 'Navigate to previous harpooned file' },

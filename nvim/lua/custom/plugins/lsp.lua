@@ -5,13 +5,18 @@ return { -- LSP Configuration & Plugins
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    {'folke/neodev.nvim', config = function() require('neodev').setup() end},
+    {
+      'folke/neodev.nvim',
+      config = function()
+        require('neodev').setup()
+      end,
+    },
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
---  This function gets run when an LSP attaches to a particular buffer. That is to say, every time a new file is opened that is associated with an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this function will be executed to configure the current buffer
+    --  This function gets run when an LSP attaches to a particular buffer. That is to say, every time a new file is opened that is associated with an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this function will be executed to configure the current buffer
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -116,7 +121,6 @@ return { -- LSP Configuration & Plugins
       -- tsserver = {},
       --
 
-
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
@@ -159,6 +163,7 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format lua code
       'gopls',
+      'tsserver',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
