@@ -195,8 +195,8 @@ bar {
 }
 
 # lock screen
-bindsym $mod+Shift+x exec "i3lock -i ~/.config/i3/dark-pixel-mountain.jpg.png"
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -i ~/.config/i3/dark-pixel-mountain.jpg.png\""
+bindsym $mod+Shift+x exec "i3lock -i ~/.config/i3/dark-pixel-mountain.png"
+exec "xautolock -detectsleep -time 3 -locker \"i3lock -i ~/.config/i3/dark-pixel-mountain.png\""
 
 # Auto Start
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal -- zsh -c "tmux new -s main && cd ~/dev/ && exec nvim"'
