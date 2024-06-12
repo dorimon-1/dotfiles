@@ -10,6 +10,7 @@ lspconfig.gopls.setup {
     gopls = {
       codelenses = {
         generate = false,
+        gc_details = false,
         test = false,
       },
       completeUnimported = true,
