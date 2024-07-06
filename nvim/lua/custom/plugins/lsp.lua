@@ -56,7 +56,13 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.codeLens = nil
+    capabilities.textDocument.signatureHelp = {
+      dynamicRegistration = false,
+      signatureInformation = {
+        documentationFormat = { 'markdown', 'plaintext' },
+        parameterInformation = { labelOffsetSupport = true },
+      },
+    }
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {

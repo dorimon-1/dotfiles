@@ -17,6 +17,22 @@ M.filetree = {
   },
 }
 
+M.dap = {
+  n = {
+    ['<leader>dg'] = { '<cmd> DapContinue<CR>', 'Debug: Start/Continue' },
+    ['<leader>dsi'] = { '<cmd> DapStepInto<CR>', 'Debug: Step Into' },
+    ['<leader>dso'] = { '<cmd> DapStepOver<CR>', 'Debug: Step Over' },
+    ['<leader>dse'] = { '<cmd> DapStepOut<CR>', 'Debug: Step Out' },
+    ['<leader>b'] = { '<cmd> DapToggleBreakpoint<CR>', 'Debug: Toggle Breakpoint' },
+    -- ['<leader>B'] = {
+    --   function()
+    --     dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+    --   end,
+    --   'Debug: Set Breakpoint',
+    -- },
+  },
+}
+
 M.harpoon = {
   n = {
     ['<leader>hh'] = { ':lua require("harpoon.ui").toggle_quick_menu()<CR>', 'Harpoon file' },
