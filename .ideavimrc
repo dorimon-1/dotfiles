@@ -1,0 +1,77 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+" Set space as the leader key
+let mapleader = " "
+" Always use the system clipboard for copy and paste
+set clipboard+=unnamedplus
+
+
+" Bufferline mappings (cycle between buffers)
+nmap <Tab> :action GotoNextTab<CR>
+nmap <S-Tab> :action GotoPreviousTab<CR>
+
+" Find files, buffers, help, etc.
+nmap <leader>ff :action GotoFile<CR>
+nmap <leader>fa :action FindInPath<CR>  " Find in path (files, no ignore)
+nmap <leader>fb :action ShowRecentFiles<CR>
+nmap <leader>fh :action Help<CR>
+nmap <leader>fo :action RecentChanges<CR>
+nmap <leader>fz :action GotoSymbol<CR>  " Simulates fuzzy find in current file
+nmap <leader>fe :action FileChooser<CR>  " Open file chooser
+nmap <leader>rn :action RefactoringMenu<CR>
+
+" Scroll down and center the screen
+nnoremap <C-d> <C-d>zz
+
+" Scroll up and center the screen
+nnoremap <C-u> <C-u>zz
+
+nnoremap <C-n> :action ToggleProjectView<CR>
+" Git commands
+nmap <leader>cm :action Git.Commit<CR>
+nmap <leader>gt :action Git.ShowLog<CR>
+
+" Pick hidden term (handled by IntelliJ terminal plugin)
+nmap <leader>pt :action ActivateTerminalToolWindow<CR>
+
+" Theme switcher (IntelliJ doesn't have a direct theme switcher, but you can open settings)
+nmap <leader>th :action ShowSettings<CR>
+
+" Show bookmarks
+nmap <leader>ma :action ShowBookmarks<CR>
+
+" Live grep (find in files in the project)
+nmap <leader>fw :action FindInPath<CR>
+nmap <leader>e :action ActivateProjectToolWindow<CR>
